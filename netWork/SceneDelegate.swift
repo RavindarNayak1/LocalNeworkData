@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  netWork
-//
-//  Created by Ravindar Nayak on 06/09/24.
-//
+
 
 import UIKit
 
