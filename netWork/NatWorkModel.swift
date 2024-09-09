@@ -8,9 +8,15 @@ struct GeoLocation: Codable {
 
 class NetWorkMannager{
     static let Shared = NetWorkMannager()
+    let myAuthToken = "copied data"
+    // MARK: How to ge the Auth Token
+    // here we have to follow few steps to generate the auth token I am Going with the Most simple and easiest way
+    // open https://ipinfo.io/account/home and login with the google accout or mail
+    // go to token section in the side menu here you can go the token
+    // simply copy and assign the value to "myAuthToken" then your redy to access the internet protocol detatils through out the word
     var locationCountry : GeoLocation  = GeoLocation(ip: "", city: "", region: "", country: "")
     func fetchLocationFromIP() {
-        let url = URL(string: "https://ipinfo.io?token=ca4fff77d8dbed")!
+        let url = URL(string: "https://ipinfo.io?token=\(myAuthToken)")!
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
